@@ -1,0 +1,16 @@
+
+<ion-header  no-border>
+  <ion-navbar color="home">
+    <ion-title>Luces</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ <ion-item text-wrap>
+        <ion-label>
+            <h2>Luces Sala</h2>
+            <p></p>
+        </ion-label>
+        <ion-toggle color="home" [(ngModel)]="estado" item-end (ionChange)="changeStatus()"></ion-toggle>
+    </ion-item>
+</ion-content>

@@ -1,18 +1,47 @@
-<ion-header>
-  <ion-navbar>
+<ion-header no-border>
+  <ion-navbar color="home">
     <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
+      <ion-icon name="menu" style="color:#FFEB3B;"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>S-Home</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+<ion-card class="background-blue">
+  <ion-card-header >
+   <h1 class="title-card" text-center>Casa</h1> 
+  </ion-card-header>
+  <ion-card-content>
+    <ion-row text-center >
+      <ion-col >
+         <ion-row >
+          <ion-col  >
+            <h2 class="white-color">Temperatura: </h2>
+            <h2 class="white-color">Humedad:  </h2>
+          </ion-col>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+          <ion-col>
+            <h2 class="white-color"> {{ temperatura }}°C </h2>
+            <h2 class="white-color">{{ humedad }} %</h2>
+          </ion-col>
+         </ion-row>
+      </ion-col>
+    </ion-row>
+
+  </ion-card-content>
+</ion-card>
+<br>
+<ion-item detail-push (click)="irLuces()">
+ Luces
+</ion-item>
+<ion-item detail-push (click)="irLuces()">
+ Puertas
+</ion-item>
+<ion-item detail-push (click)="irLuces()">
+ Luces
+</ion-item>
+<i class="far fa-lightbulb"></i>
+
 </ion-content>
