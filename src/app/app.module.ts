@@ -11,11 +11,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ApiProvider } from '../providers/api/api';
 import { HttpClientModule } from '@angular/common/http';
 
-
+import { OneSignal } from '@ionic-native/OneSignal';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
+import { PushnotificationProvider } from '../providers/pushnotification/pushnotification';
 export const firebaseConfig = {
   apiKey: "AIzaSyCVxIXgGMDH7vWghDriQViefYEpR-7usZk",
     authDomain: "domotica-2020.firebaseapp.com",
@@ -54,9 +54,11 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
+    OneSignal,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AngularFireDatabase,
-    ApiProvider
+    ApiProvider,
+    PushnotificationProvider
   ]
 })
 export class AppModule {}
