@@ -11,6 +11,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ApiProvider } from '../providers/api/api';
 import { HttpClientModule } from '@angular/common/http';
 
+import { IrrigationPage } from '../pages/irrigation/irrigation';
+import { VoiceControlPage } from '../pages/voice-control/voice-control';
+import { SpeechRecognition } from '@ionic-native/speech-recognition';
+
 import { OneSignal } from '@ionic-native/OneSignal';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
@@ -34,7 +38,10 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     ListPage,
-    LightsPage
+    LightsPage,
+    IrrigationPage,
+    VoiceControlPage
+ 
   ],
   imports: [
     BrowserModule,
@@ -49,16 +56,20 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     ListPage,
-    LightsPage
+    LightsPage,
+    IrrigationPage,
+    VoiceControlPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     OneSignal,
+    SpeechRecognition,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AngularFireDatabase,
     ApiProvider,
-    PushnotificationProvider
+    PushnotificationProvider,
+    ApiProvider
   ]
 })
 export class AppModule {}

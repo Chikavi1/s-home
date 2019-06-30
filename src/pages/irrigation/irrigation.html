@@ -1,0 +1,39 @@
+<ion-header  no-border>
+  <ion-navbar color="home">
+    <ion-title>Sistema de Riego</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	<br>
+	<br>
+	<br>
+<ion-item text-wrap>
+	<ion-label>
+	    <h2>Personalizar Hora</h2>
+	</ion-label>
+	<ion-toggle color="home" [(ngModel)]="activarPersonalizado" item-end ></ion-toggle>
+</ion-item>
+<br>
+<ion-item>
+  <ion-label><ion-icon name="clock"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;Hora</ion-label>
+  <ion-datetime [disabled]=(!activarPersonalizado) displayFormat="h:mm A" [(ngModel)]="hora"></ion-datetime>
+</ion-item>
+<br>
+<ion-item>
+  <ion-label><ion-icon name="timer"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;Duración</ion-label>
+  <ion-datetime [disabled]=(!activarPersonalizado) displayFormat="m min" minuteValues="2,4,5,6,8,10,12,14,15" [(ngModel)]="minutos"></ion-datetime>
+</ion-item>
+<br>
+<br>
+<br>
+<h3 text-center>Activar Manualmente</h3>
+<ion-item text-wrap>
+        <ion-label>
+            <h2>Control	</h2>
+            <p></p>
+        </ion-label>
+        <ion-toggle color="home" [(ngModel)]="estado" item-end (ionChange)="changeStatus()"></ion-toggle>
+    </ion-item>
+</ion-content>
